@@ -24,7 +24,7 @@ function draw() {
       angle = angle + 1;
     }
   pop() 
-  
+
   push()
     translate(width/2, height/2)              
     rotate(frameCount*3)                      //il cerchio ruota intorno al centro
@@ -44,4 +44,36 @@ function draw() {
       direzione = "destra"
     }
     pop()
-  }
+  
+
+  push()                                      //trasformazione di cerchio a destra
+    translate(windowWidth/6, windowHeight/2);
+    rotate(frameCount/2)
+    stroke("#D88D74")
+    line(0, 0, 50, 0);
+    stroke("#DCAF44");
+    line(50, 0, 100, 0);
+    stroke("#4E78B8");
+    line(100, 0, 150, 0);
+    stroke("black");
+    line(0, 0, -100, 0);
+    stroke("white");
+    line(-100, 0, -150, 0);
+  pop()
+
+  push()                                    //trasformazione del cerchio a sinistra
+    translate((windowWidth/6)*5, windowHeight/2);
+    rotate(-frameCount/2)
+    stroke("#D88D74")
+    line(0, 0, -50, 0);
+    stroke("#DCAF44");
+    line(-50, 0, -100, 0);
+    stroke("#4E78B8");
+    line(-100, 0, -150, 0);
+    stroke("black");
+    line(0, 0, 100, 0);
+    stroke("white");
+    line(100, 0, 150, 0);
+  pop()
+}
+  

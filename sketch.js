@@ -24,4 +24,24 @@ function draw() {
       angle = angle + 1;
     }
   pop() 
+  
+  push()
+    translate(width/2, height/2)              
+    rotate(frameCount*3)                      //il cerchio ruota intorno al centro
+    noFill()
+    stroke("#DCAF44")
+    circle(x, 0, 50)
+    if (direzione == "destra"){               //il cerchio oscilla in orizzontale tra 200 e 290 pixel dal centro in base alla variazione di x
+      x = x+4;
+    }
+    if (direzione == "sinistra"){
+      x = x-4;
+    }
+    if (x >= 290){
+      direzione = "sinistra"
+    }
+    else if (x <= 200){
+      direzione = "destra"
+    }
+    pop()
   }
